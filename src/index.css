@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 228 100% 99%;
+    --card: 217 32% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 170 100% 70%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 170 100% 70%;
+    --accent-foreground: 222 47% 11%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 170 100% 70%;
+    --radius: 0.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply bg-background text-foreground;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--background);
+  }
+
+  body {
+    @apply antialiased;
+    font-family: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .nav-link {
+    @apply relative text-muted-foreground hover:text-primary transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-[2px] bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .section-heading {
+    @apply flex items-center text-2xl font-semibold hover:text-primary transition-colors duration-300;
+  }
+
+  .section-heading::after {
+    content: '';
+    @apply ml-4 h-[1px] w-full max-w-[300px] bg-primary/30 transition-all duration-300;
+  }
+
+  .section-heading:hover::after {
+    @apply bg-primary;
+  }
+
+  .numbered-heading {
+    @apply font-mono text-primary text-sm mr-2;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressBar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeInLetter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Splash Screen Animations */
+.animate-progressBar {
+  animation: progressBar 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeInLetter 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+/* Interactive Elements */
+.card-hover {
+  @apply transition-all duration-300 ease-in-out;
+  transform: translateY(0);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  @apply shadow-lg shadow-primary/10;
+}
+
+.social-link-hover {
+  @apply transition-all duration-300 ease-in-out;
+  transform: translateY(0);
+}
+
+.social-link-hover:hover {
+  transform: translateY(-4px);
+  @apply text-primary;
+}
+
+/* Calibre font */
+@font-face {
+  font-family: 'Calibre';
+  src: url('/fonts/Calibre-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('/fonts/Calibre-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('/fonts/Calibre-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
