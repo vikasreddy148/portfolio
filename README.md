@@ -1,10 +1,10 @@
 # Vikas's Portfolio
 
-![Netlify Status](https://api.netlify.com/api/v1/badges/db718536-cb6a-44c1-b38c-f6c5396a4c4c/deploy-status)
+
 
 Welcome to my personal portfolio website! This project showcases my skills, projects, and experience in web development. Built using **React, Vite, TypeScript, shadcn/ui, and Tailwind CSS**.
 
-**Live Site:** [Vikas's Portfolio](https://Vikas-s.netlify.app)
+**Live Site:** [Vikas's Portfolio](https://portfolio-lime-five-68.vercel.app/)
 
 ---
 
@@ -33,8 +33,8 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 ### 1️⃣ Clone the Repository
 
 ```sh
-git clone https://github.com/Vikas1005/Vikas-sPortfolio.git
-cd Vikas-sPortfolio
+git clone https://github.com/vikasreddy148/portfolio.git
+cd Portfolio
 ```
 
 ### 2️⃣ Install Dependencies
