@@ -28,7 +28,7 @@ const Index = () => {
       <SocialLinks />
       <RightSideLinks />
       <footer className="py-6 text-center text-sm text-muted-foreground">
-        <p>Design Inspired By Brittany Chiang</p>
+        <p></p>
       </footer>
     </div>
   );
