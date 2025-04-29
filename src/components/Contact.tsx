@@ -4,17 +4,22 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
+    alert("message sent");
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -27,7 +32,8 @@ const Contact = () => {
         </h2>
         <p className="text-muted-foreground mb-12 leading-relaxed max-w-lg mx-auto">
           I'm currently looking for new opportunities, my inbox is always open.
-          Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          Whether you have a question or just want to say hi, I'll try my best
+          to get back to you!
         </p>
 
         {/* Contact Form */}
@@ -49,7 +55,10 @@ const Contact = () => {
           </div>
 
           <div>
-            <label className="block mb-2 font-mono text-primary" htmlFor="email">
+            <label
+              className="block mb-2 font-mono text-primary"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -65,7 +74,10 @@ const Contact = () => {
           </div>
 
           <div>
-            <label className="block mb-2 font-mono text-primary" htmlFor="message">
+            <label
+              className="block mb-2 font-mono text-primary"
+              htmlFor="message"
+            >
               Message
             </label>
             <textarea
